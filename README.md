@@ -8,7 +8,7 @@ What this adds on top is a SSH server and some extra reading of the docker conta
 
 Run:
 ```
-$ docker run -d -p 80:80 2020:22 -v /var/run/docker.sock:/tmp/docker.sock:ro boxednorman/nginx-proxy
+$ docker run -d -p 80:80 -p 2020:22 --net frontend --name nginx --restart always -v /var/run/docker.sock:/tmp/docker.sock:ro boxednorman/nginx-proxy
 ```
 
 To SSH into the container run:
